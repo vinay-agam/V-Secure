@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <linearGradient id="goldGradLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <radialGradient id="softEmeraldGlow" cx="75%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#d1fae5" stop-opacity="0.6" />
+      <stop offset="50%" stop-color="#ecfdf5" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="isoGridLight" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 80 M 0 0 L 80 80" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+      <circle cx="40" cy="40" r="1.5" fill="#cbd5e1"/>
+    </pattern>
+  </defs>
+
+  <!-- Clean Pearl Light Background -->
+  <rect width="1920" height="1080" fill="url(#bgGradLight)" />
+  <rect width="1920" height="1080" fill="url(#isoGridLight)" />
+  <circle cx="1400" cy="350" r="600" fill="url(#softEmeraldGlow)" />
+
+  <!-- Abstract Real Estate & Plot Topography Lines -->
+  <g opacity="0.4" stroke="#a7f3d0" stroke-width="1.2" fill="none">
+    <path d="M 0,700 Q 400,620 900,680 T 1920,600" />
+    <path d="M 0,760 Q 450,700 980,750 T 1920,680" stroke="#cbd5e1"/>
+    <path d="M 0,830 Q 500,780 1100,820 T 1920,770" stroke="#d97706" stroke-opacity="0.35"/>
+    <path d="M 0,910 Q 550,860 1200,900 T 1920,870" stroke="#6ee7b7" stroke-opacity="0.3"/>
+  </g>
+
+  <!-- Isometric Layout / Master Plan Plots on Right Side -->
+  <g transform="translate(1050, 420)">
+    <!-- Plot Boundary 1 -->
+    <polygon points="120,40 380,100 260,240 0,180" fill="rgba(4, 120, 87, 0.05)" stroke="#6ee7b7" stroke-width="1.5" stroke-dasharray="6,4"/>
+    <polygon points="135,55 365,110 250,225 20,170" fill="rgba(255, 255, 255, 0.7)" stroke="#a7f3d0" stroke-width="1"/>
+
+    <!-- Plot Boundary 2 (Secured / Monitored Plot) -->
+    <polygon points="390,105 650,165 530,305 270,245" fill="rgba(5, 150, 105, 0.1)" stroke="#047857" stroke-width="2"/>
+    
+    <!-- Geo-Tag Marker / Pin -->
+    <g transform="translate(460, 205)">
+      <circle cx="0" cy="0" r="28" fill="rgba(4, 120, 87, 0.12)"/>
+      <circle cx="0" cy="0" r="16" fill="rgba(4, 120, 87, 0.25)"/>
+      <circle cx="0" cy="0" r="7" fill="#047857"/>
+      <!-- Pulse Rings -->
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#059669" stroke-width="1.2" stroke-opacity="0.4"/>
+      <!-- Flag / Label -->
+      <g transform="translate(18, -25)">
+        <rect x="0" y="0" width="130" height="28" rx="14" fill="#ffffff" stroke="#a7f3d0" stroke-width="1"/>
+        <text x="12" y="18" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#047857">PLOT #42 SECURE</text>
+      </g>
+    </g>
+
+    <!-- Corner Survey Pegs -->
+    <circle cx="390" cy="105" r="4" fill="#d97706"/>
+    <circle cx="650" cy="165" r="4" fill="#d97706"/>
+    <circle cx="530" cy="305" r="4" fill="#d97706"/>
+    <circle cx="270" cy="245" r="4" fill="#d97706"/>
+  </g>
+</svg>

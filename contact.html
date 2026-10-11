@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Property Registration — V Secure Property Services</title>
+  <meta name="description" content="Get in touch with V Secure Property Services. Register your property, request monitoring services, or reach out for support.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <div class="header__logo-icon">VS</div>
+        <div class="header__logo-text">
+          V SECURE
+          <span>Property Services</span>
+        </div>
+      </a>
+
+      <div class="header__actions">
+        <a href="#register" class="header__mobile-cta"><i class="fa-solid fa-shield-halved"></i> Register</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+      </div>
+
+      <nav class="header__nav" id="nav">
+        <div class="nav__drawer-header">
+          <div class="nav__drawer-brand">
+            <div class="header__logo-icon" style="width:36px;height:36px;font-size:1rem;">VS</div>
+            <div class="header__logo-text" style="font-size:1.1rem;">
+              V SECURE
+              <span style="font-size:0.65rem;">Property Services</span>
+            </div>
+          </div>
+          <button class="nav__drawer-close" aria-label="Close navigation">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="about.html" class="nav__link"><i class="fa-solid fa-circle-info"></i> About Us</a></li>
+          <li><a href="services.html" class="nav__link"><i class="fa-solid fa-shield-halved"></i> Services</a></li>
+          <li><a href="how-it-works.html" class="nav__link"><i class="fa-solid fa-route"></i> How It Works</a></li>
+          <li><a href="plans.html" class="nav__link"><i class="fa-solid fa-tags"></i> Plans</a></li>
+          <li><a href="faq.html" class="nav__link"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
+          <li><a href="contact.html" class="nav__link nav__link--active"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+        </ul>
+        <a href="#register" class="nav__cta"><i class="fa-solid fa-shield-halved"></i> REGISTER YOUR PROPERTY</a>
+
+        <div class="nav__drawer-footer">
+          <a href="tel:+919840012345" class="nav__drawer-phone">
+            <i class="fa-solid fa-phone"></i>
+            <span>+91 98400 12345</span>
+          </a>
+          <div class="nav__drawer-division">A Division of VTrust Realty Pvt. Ltd.</div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="badge badge--blue"><i class="fa-solid fa-envelope"></i> Connect With Us</span>
+      <h1>Let's Take Care of <span class="text-primary">Your Property</span></h1>
+      <p>Whether you wish to enrol a new plot, schedule fencing and cleaning, or need legal documentation assistance — our executive team is here to assist.</p>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- FORM CARD -->
+        <div class="contact-form" id="register">
+          <div style="margin-bottom: 1.5rem;">
+            <span class="badge badge--gold" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-file-signature"></i> Fast Onboarding</span>
+            <h2 style="font-size: var(--fs-h3); color: var(--clr-text-title); margin-bottom: 0.35rem;">Register Your Property</h2>
+            <p style="color: var(--clr-text-muted); font-size: var(--fs-small);">Fill out your property details below. A dedicated relationship manager will reach out within 24 hours.</p>
+          </div>
+
+          <form id="contact-form">
+            <div class="form-group">
+              <label for="fullName">Full Name *</label>
+              <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+            </div>
+
+            <div class="form-group">
+              <label for="mobile">Mobile Number *</label>
+              <input type="tel" id="mobile" name="mobile" required placeholder="+91 XXXXX XXXXX">
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="name@example.com">
+            </div>
+
+            <div class="form-group">
+              <label for="location">Property Location / Area *</label>
+              <input type="text" id="location" name="location" required placeholder="e.g. OMR, ECR, Tambaram, Chengalpattu, Sriperumbudur">
+            </div>
+
+            <div class="form-group">
+              <label for="propertyType">Property Type *</label>
+              <select id="propertyType" name="propertyType" required>
+                <option value="" disabled selected>Select property classification</option>
+                <option value="plot">Approved Layout Plot</option>
+                <option value="land">Agricultural / Open Land</option>
+                <option value="residential">Residential Property / Villa</option>
+                <option value="multiple">Multiple Plots / Portfolio</option>
+                <option value="other">Other Commercial / Industrial</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Specific Requirements / Message</label>
+              <textarea id="message" name="message" rows="4" placeholder="Mention plot number, survey number, inspection urgency, or cleaning requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--lg" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Submit Registration &amp; Enquiry
+            </button>
+          </form>
+        </div>
+
+        <!-- CONTACT INFO -->
+        <div class="contact-info">
+          <div class="contact-info-card">
+            <h3 style="font-size: 1.25rem; color: var(--clr-text-title); margin-bottom: 0.5rem;">Corporate Office</h3>
+            <p style="font-size: 0.95rem; color: var(--clr-text-muted); margin-bottom: 1.5rem; line-height: 1.6;">
+              Headquartered in Chennai, coordinating field operations across metropolitan and expanding suburban growth corridors.
+            </p>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon icon-blue"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-info__text">
+                <h4>Address</h4>
+                <p>Chennai, Tamil Nadu, India</p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon icon-emerald"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-info__text">
+                <h4>Direct Email</h4>
+                <p>admin@secureplots.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon icon-amber"><i class="fa-solid fa-clock"></i></div>
+              <div class="contact-info__text">
+                <h4>Support Hours</h4>
+                <p>Monday – Saturday: 9:00 AM – 6:00 PM IST</p>
+              </div>
+            </div>
+
+            <div class="contact-info__item">
+              <div class="contact-info__icon icon-purple"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="contact-info__text">
+                <h4>Operational Regions</h4>
+                <p>Chennai, Chengalpattu, Kanchipuram, Thiruvallur &amp; Suburbs</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Existing Customer Card -->
+          <div class="contact-info-card" style="background: #eff6ff; border-color: #bfdbfe;">
+            <h4 style="font-size: 1.05rem; color: var(--clr-primary-dark); margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fa-solid fa-user-check" style="color: var(--clr-primary);"></i> Already an Enrolled Customer?
+            </h4>
+            <p style="font-size: 0.9rem; color: var(--clr-text-body); line-height: 1.6; margin-bottom: 1rem;">
+              Need an ad-hoc visit or maintenance dispatch? Raise a quick ticket through your mobile account or reach your assigned relationship manager.
+            </p>
+            <a href="app.html" class="btn btn--secondary btn--sm" style="background: #ffffff;">
+              <i class="fa-solid fa-mobile-screen"></i> Access Mobile Portal
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Your Property. Our Care. Total Peace of Mind.</h2>
+      <p>Continuous on-ground vigilance backed by VTrust Realty Pvt. Ltd.</p>
+      <div class="btn-group">
+        <a href="plans.html" class="btn btn--primary btn--lg"><i class="fa-solid fa-tags"></i> View All Plans</a>
+        <a href="services.html" class="btn btn--secondary btn--lg"><i class="fa-solid fa-arrow-right"></i> Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="header__logo" style="margin-bottom:0.5rem;">
+            <div class="header__logo-icon">VS</div>
+            <div class="header__logo-text">V SECURE<span>Property Services</span></div>
+          </a>
+          <p>Professional property monitoring and asset management services. A Division of VTrust Realty Pvt. Ltd.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer__col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="plans.html">Pricing Plans</a></li>
+            <li><a href="app.html">Mobile App</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Property Monitoring</a></li>
+            <li><a href="services.html">Maintenance</a></li>
+            <li><a href="services.html">Valuation</a></li>
+            <li><a href="services.html">Documentation</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#register">Register Property</a></li>
+            <li><a href="contact.html">Client Care</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 V Secure Property Services. A Division of VTrust Realty Pvt. Ltd. All Rights Reserved.</p>
+        <div class="footer__policies">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Cancellation &amp; Refund Policy</a>
+          <a href="#">Disclaimer</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

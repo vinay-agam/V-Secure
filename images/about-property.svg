@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="lightCardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="50%" stop-color="#f0fdf4" />
+      <stop offset="100%" stop-color="#ffffff" />
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b45309" />
+      <stop offset="100%" stop-color="#d97706" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#047857" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <filter id="lightShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#0f172a" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Clean Light Canvas -->
+  <rect width="800" height="600" rx="20" fill="url(#lightCardBg)" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="400" cy="300" r="260" fill="rgba(4,120,87,0.03)" />
+
+  <!-- Technical Survey Blueprint Grid -->
+  <g stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2,4" opacity="0.8">
+    <line x1="80" y1="80" x2="720" y2="80" />
+    <line x1="80" y1="180" x2="720" y2="180" />
+    <line x1="80" y1="280" x2="720" y2="280" />
+    <line x1="80" y1="380" x2="720" y2="380" />
+    <line x1="80" y1="480" x2="720" y2="480" />
+    <line x1="160" y1="60" x2="160" y2="520" />
+    <line x1="280" y1="60" x2="280" y2="520" />
+    <line x1="400" y1="60" x2="400" y2="520" />
+    <line x1="520" y1="60" x2="520" y2="520" />
+    <line x1="640" y1="60" x2="640" y2="520" />
+  </g>
+
+  <!-- Isometric Plot Layout -->
+  <g transform="translate(140, 110)">
+    <!-- Base Land Boundary -->
+    <polygon points="260,50 480,170 260,290 40,170" fill="#ffffff" stroke="#047857" stroke-width="2.5" filter="url(#lightShadow)"/>
+    <polygon points="260,65 460,170 260,275 60,170" fill="rgba(209,250,229,0.4)" stroke="#a7f3d0" stroke-dasharray="6,4" stroke-width="1.5" />
+
+    <!-- Lush Plot Lawn & Boundary Fence -->
+    <path d="M 110,170 L 260,95 L 410,170 L 260,245 Z" fill="#ecfdf5" stroke="#059669" stroke-width="2" />
+
+    <!-- Survey Pegs with Amber Pins -->
+    <g fill="#d97706" stroke="#ffffff" stroke-width="2">
+      <circle cx="260" cy="50" r="7" />
+      <circle cx="480" cy="170" r="7" />
+      <circle cx="260" cy="290" r="7" />
+      <circle cx="40" cy="170" r="7" />
+    </g>
+
+    <!-- Boundary Measurements -->
+    <text x="355" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#047857">60.0 FT</text>
+    <text x="355" y="245" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#047857">40.0 FT</text>
+
+    <!-- Center Radar & Drone Scan Beam -->
+    <g transform="translate(260, 170)">
+      <circle cx="0" cy="0" r="45" fill="none" stroke="#059669" stroke-width="1.5" stroke-dasharray="4,4" opacity="0.6"/>
+      <circle cx="0" cy="0" r="22" fill="rgba(4,120,87,0.12)"/>
+      <circle cx="0" cy="0" r="8" fill="#047857"/>
+      
+      <!-- Vertical Drone Inspection Beam -->
+      <line x1="0" y1="0" x2="0" y2="-90" stroke="#059669" stroke-width="2" stroke-dasharray="3,3"/>
+      
+      <!-- Mini Inspection Drone -->
+      <g transform="translate(0, -90)">
+        <ellipse cx="0" cy="0" rx="18" ry="7" fill="#ffffff" stroke="#047857" stroke-width="2"/>
+        <line x1="-26" y1="-5" x2="26" y2="5" stroke="#64748b" stroke-width="2"/>
+        <line x1="-26" y1="5" x2="26" y2="-5" stroke="#64748b" stroke-width="2"/>
+        <circle cx="-26" cy="-5" r="3.5" fill="#059669"/>
+        <circle cx="26" cy="5" r="3.5" fill="#059669"/>
+        <circle cx="-26" cy="5" r="3.5" fill="#059669"/>
+        <circle cx="26" cy="-5" r="3.5" fill="#059669"/>
+        <circle cx="0" cy="3" r="3" fill="#059669"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Floating White Status Badge 1 -->
+  <g transform="translate(70, 420)" filter="url(#lightShadow)">
+    <rect width="300" height="92" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <circle cx="48" cy="46" r="24" fill="#ecfdf5"/>
+    <!-- Shield Icon -->
+    <path d="M 48,32 L 60,37 C 60,50 48,58 48,60 C 48,58 36,50 36,37 Z" fill="url(#emeraldGrad)"/>
+    <text x="86" y="40" font-family="'Outfit', sans-serif" font-size="15" font-weight="800" fill="#0f172a">V SECURE CARE</text>
+    <text x="86" y="58" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#64748b">A Div. of VTrust Realty Pvt. Ltd.</text>
+    <rect x="86" y="66" width="130" height="18" rx="9" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="0.8"/>
+    <text x="96" y="79" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#047857">✓ ACTIVE ON-GROUND</text>
+  </g>
+
+  <!-- Floating White Status Badge 2 -->
+  <g transform="translate(430, 435)" filter="url(#lightShadow)">
+    <rect width="290" height="82" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+    <circle cx="44" cy="41" r="22" fill="#f0fdf4"/>
+    <circle cx="44" cy="41" r="8" fill="#047857"/>
+    <text x="78" y="36" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#0f172a">BOUNDARY VERIFIED</text>
+    <text x="78" y="52" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" fill="#64748b">12.9716° N, 80.2437° E</text>
+    <text x="78" y="66" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="700" fill="#d97706">GPS TIMESTAMP OK</text>
+  </g>
+</svg>
