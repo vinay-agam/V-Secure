@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Services — V Secure Property Services</title>
-  <meta name="description" content="Explore V Secure's comprehensive property services: monitoring, inspections, geo-tagged updates, maintenance, valuation, documentation and legal support.">
+  <meta name="description" content="Everything Your Property Needs. In One Place. Professional property monitoring, photo updates, boundary monitoring, plot cleaning, market valuation and documentation.">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -39,9 +39,6 @@
               <span style="font-size:0.65rem;">Property Services</span>
             </div>
           </div>
-          <button class="nav__drawer-close" aria-label="Close navigation">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
         </div>
 
         <ul class="nav__list">
@@ -50,6 +47,7 @@
           <li><a href="services.html" class="nav__link nav__link--active"><i class="fa-solid fa-shield-halved"></i> Services</a></li>
           <li><a href="how-it-works.html" class="nav__link"><i class="fa-solid fa-route"></i> How It Works</a></li>
           <li><a href="plans.html" class="nav__link"><i class="fa-solid fa-tags"></i> Plans</a></li>
+          <li><a href="app.html" class="nav__link"><i class="fa-solid fa-mobile-screen-button"></i> Mobile App</a></li>
           <li><a href="faq.html" class="nav__link"><i class="fa-solid fa-circle-question"></i> FAQs</a></li>
           <li><a href="contact.html" class="nav__link"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
         </ul>
@@ -66,22 +64,22 @@
     </div>
   </header>
 
-  <!-- ========== PAGE HERO ========== -->
+  <!-- ========== PAGE 3 — SERVICES: HERO SECTION ========== -->
   <section class="page-hero">
     <div class="container">
-      <span class="badge badge--blue"><i class="fa-solid fa-list-check"></i> Service Portfolio</span>
-      <h1>Comprehensive Care for Your <span class="text-primary">Real Estate Assets</span></h1>
-      <p>V Secure goes beyond routine site visits by offering a complete ecosystem of property monitoring, maintenance, documentation, and advisory services.</p>
+      <span class="badge badge--blue"><i class="fa-solid fa-shield-halved"></i> Our Services</span>
+      <h1>Everything Your Property Needs. <span class="text-primary">In One Place.</span></h1>
+      <p>V Secure goes beyond routine site visits by offering a range of property monitoring and support services.</p>
     </div>
   </section>
 
-  <!-- ========== SERVICES DIRECTORY ========== -->
+  <!-- ========== SERVICES GRID ========== -->
   <section class="section">
     <div class="container">
       <div class="services-grid">
 
-        <!-- Service 01 -->
-        <div class="service-card">
+        <!-- 01 — Property Monitoring & Inspection -->
+        <div class="service-card" id="monitoring">
           <div class="service-card__header">
             <div class="benefit-card__icon icon-emerald" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
               <i class="fa-solid fa-binoculars"></i>
@@ -89,16 +87,17 @@
             <div class="service-card__number">01</div>
           </div>
           <h3>Property Monitoring &amp; Inspection</h3>
-          <p>Professional on-ground inspections keep you informed about the physical condition of your land. Our officers conduct scheduled walkthroughs and document vital observations.</p>
+          <p>Professional property inspections help you stay informed about the physical condition of your land. Depending on the selected package, our team conducts scheduled inspections and documents relevant observations.</p>
           <div class="service-card__tags">
-            <span class="service-card__tag">Condition Check</span>
-            <span class="service-card__tag">Boundary Audit</span>
-            <span class="service-card__tag">Issue Identification</span>
-            <span class="service-card__tag">Photo Records</span>
+            <span class="service-card__tag">Property condition checks</span>
+            <span class="service-card__tag">Boundary observations</span>
+            <span class="service-card__tag">Visible issue identification</span>
+            <span class="service-card__tag">Photographic documentation</span>
+            <span class="service-card__tag">Inspection updates</span>
           </div>
         </div>
 
-        <!-- Service 02 -->
+        <!-- 02 — Photo, Video & Geo-Tagged Updates -->
         <div class="service-card">
           <div class="service-card__header">
             <div class="benefit-card__icon icon-blue" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
@@ -107,16 +106,13 @@
             <div class="service-card__number">02</div>
           </div>
           <h3>Photo, Video &amp; Geo-Tagged Updates</h3>
-          <p>See exactly what is happening without having to travel. All field visits are documented through date-stamped photographs and verifiable GPS coordinates.</p>
-          <div class="service-card__tags">
-            <span class="service-card__tag">High-Res Photos</span>
-            <span class="service-card__tag">Video Walkthroughs</span>
-            <span class="service-card__tag">GPS Geo-Tagging</span>
-            <span class="service-card__tag">Dashboard Sync</span>
-          </div>
+          <p>See what's happening without being there. Applicable property visits are documented through photographs and inspection updates, helping you maintain a digital record of your property.</p>
+          <p style="font-size: 0.9rem; color: var(--clr-primary); font-weight: 600; margin-top: 0.5rem;">
+            Customers can access applicable property updates through their V Secure account/app.
+          </p>
         </div>
 
-        <!-- Service 03 -->
+        <!-- 03 — Boundary & Encroachment Monitoring -->
         <div class="service-card">
           <div class="service-card__header">
             <div class="benefit-card__icon icon-purple" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
@@ -125,16 +121,14 @@
             <div class="service-card__number">03</div>
           </div>
           <h3>Boundary &amp; Encroachment Monitoring</h3>
-          <p>Corner pegs and perimeter lines are thoroughly examined during scheduled visits. If potential encroachment risks or boundary tampering occur, you are alerted immediately.</p>
-          <div class="service-card__tags">
-            <span class="service-card__tag">Peg Verification</span>
-            <span class="service-card__tag">Encroachment Alerts</span>
-            <span class="service-card__tag">Perimeter Integrity</span>
+          <p>Property boundaries are observed during scheduled inspections. If potential encroachment concerns or visible boundary issues are identified, the customer is informed so that appropriate action can be considered.</p>
+          <div style="font-size: 0.85rem; color: var(--clr-text-muted); font-style: italic; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: var(--clr-bg-page); border-radius: 6px;">
+            <i class="fa-solid fa-circle-info" style="color:var(--clr-accent-gold);"></i> Monitoring is observational and does not replace a professional land survey or legal opinion.
           </div>
         </div>
 
-        <!-- Service 04 -->
-        <div class="service-card">
+        <!-- 04 — Plot Cleaning & Maintenance -->
+        <div class="service-card" id="maintenance">
           <div class="service-card__header">
             <div class="benefit-card__icon icon-amber" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
               <i class="fa-solid fa-broom"></i>
@@ -142,146 +136,147 @@
             <div class="service-card__number">04</div>
           </div>
           <h3>Plot Cleaning &amp; Maintenance</h3>
-          <p>We coordinate essential on-site maintenance requirements based on your plot's specific condition and seasonal needs through vetted contractors.</p>
+          <p>We can coordinate additional maintenance requirements based on the property's needs.</p>
           <div class="service-card__tags">
-            <span class="service-card__tag">Weed Clearing</span>
-            <span class="service-card__tag">Barbed Fencing</span>
+            <span class="service-card__tag">Plot Cleaning</span>
+            <span class="service-card__tag">Vegetation Clearance</span>
+            <span class="service-card__tag">Fencing</span>
             <span class="service-card__tag">Compound Wall</span>
-            <span class="service-card__tag">Borewell &amp; EB</span>
+            <span class="service-card__tag">Borewell</span>
+            <span class="service-card__tag">EB Connection</span>
           </div>
         </div>
 
-        <!-- Service 05 -->
-        <div class="service-card">
+        <!-- 05 — Market Valuation Report -->
+        <div class="service-card" id="valuation">
           <div class="service-card__header">
-            <div class="benefit-card__icon icon-indigo" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
+            <div class="benefit-card__icon icon-teal" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
               <i class="fa-solid fa-chart-line"></i>
             </div>
             <div class="service-card__number">05</div>
           </div>
-          <h3>Market Valuation Reports</h3>
-          <p>Understand the realistic market worth of your land asset. V Secure provides structured market valuation reports based on local transaction records and neighborhood trends.</p>
-          <div class="service-card__tags">
-            <span class="service-card__tag">Price Trends</span>
-            <span class="service-card__tag">Guideline Value</span>
-            <span class="service-card__tag">Comparable Sales</span>
-          </div>
+          <h3>Market Valuation Report</h3>
+          <p>Understand the current market context of your property. V Secure can provide a market valuation report based on prevailing market conditions and recent relevant property transactions.</p>
         </div>
 
-        <!-- Service 06 -->
-        <div class="service-card">
+        <!-- 06 — Property Documentation Assistance -->
+        <div class="service-card" id="documentation">
           <div class="service-card__header">
-            <div class="benefit-card__icon icon-teal" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
-              <i class="fa-solid fa-file-shield"></i>
+            <div class="benefit-card__icon icon-indigo" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
+              <i class="fa-solid fa-file-signature"></i>
             </div>
             <div class="service-card__number">06</div>
           </div>
           <h3>Property Documentation Assistance</h3>
-          <p>Avoid bureaucratic delays with professional coordination support for official revenue department documents, certifications, and land registrations.</p>
+          <p>Get assistance coordinating property-related documentation requirements.</p>
           <div class="service-card__tags">
             <span class="service-card__tag">EC Verification</span>
-            <span class="service-card__tag">Patta Transfer</span>
-            <span class="service-card__tag">Revenue Liaison</span>
+            <span class="service-card__tag">Patta Assistance</span>
+            <span class="service-card__tag">Property Records</span>
+            <span class="service-card__tag">Other Administrative Requirements</span>
           </div>
         </div>
 
-        <!-- Service 07 -->
+        <!-- 07 — Property Resale Assistance -->
         <div class="service-card">
           <div class="service-card__header">
-            <div class="benefit-card__icon icon-rose" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
+            <div class="benefit-card__icon icon-blue" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
               <i class="fa-solid fa-handshake"></i>
             </div>
             <div class="service-card__number">07</div>
           </div>
           <h3>Property Resale Assistance</h3>
-          <p>Planning to monetize or liquidate your plot? Leveraging VTrust Realty's extensive network, we assist in connecting you with genuine, verified buyers.</p>
-          <div class="service-card__tags">
-            <span class="service-card__tag">Buyer Network</span>
-            <span class="service-card__tag">Marketing Support</span>
-            <span class="service-card__tag">Closing Support</span>
-          </div>
+          <p>Planning to sell your property? V Secure can provide property resale assistance as an additional service based on customer requirements.</p>
         </div>
 
-        <!-- Service 08 -->
+        <!-- 08 — Property-Related Legal Support -->
         <div class="service-card">
           <div class="service-card__header">
-            <div class="benefit-card__icon icon-purple" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
+            <div class="benefit-card__icon icon-emerald" style="margin-bottom:0; width:48px; height:48px; font-size:1.25rem;">
               <i class="fa-solid fa-scale-balanced"></i>
             </div>
             <div class="service-card__number">08</div>
           </div>
-          <h3>Legal Coordination &amp; Advisory</h3>
-          <p>Get reliable coordination for legal reviews, title opinions, and document scrutiny through accredited real estate advocates and legal advisors.</p>
-          <div class="service-card__tags">
-            <span class="service-card__tag">Title Scrutiny</span>
-            <span class="service-card__tag">Legal Opinion</span>
-            <span class="service-card__tag">Dispute Advisory</span>
+          <h3>Property-Related Legal Support</h3>
+          <p>V Secure can coordinate property-related legal support based on the customer's specific requirements.</p>
+          <div style="font-size: 0.85rem; color: var(--clr-text-muted); font-style: italic; margin-top: 0.75rem; padding: 0.5rem 0.75rem; background: var(--clr-bg-page); border-radius: 6px;">
+            <i class="fa-solid fa-circle-info" style="color:var(--clr-accent-gold);"></i> Legal advice, where required, should be provided by appropriately qualified professionals.
           </div>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ========== CTA ========== -->
-  <section class="cta-section">
-    <div class="container">
-      <h2>Need Tailored Property Assistance?</h2>
-      <p>Speak directly with our property care team to discuss your land's specific requirements.</p>
-      <div class="btn-group">
-        <a href="contact.html#register" class="btn btn--primary btn--lg"><i class="fa-solid fa-headset"></i> Request Assistance</a>
-        <a href="plans.html" class="btn btn--secondary btn--lg"><i class="fa-solid fa-tags"></i> View Monitoring Plans</a>
+      <!-- Closing CTA Button -->
+      <div style="text-align: center; margin-top: 3.5rem;">
+        <a href="contact.html#register" class="btn btn--primary btn--lg" style="padding: 1.1rem 2.5rem; font-size: 1.1rem;">
+          <i class="fa-solid fa-shield-halved"></i> REQUEST PROPERTY ASSISTANCE
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
+  <!-- ========== RECOMMENDED FOOTER ========== -->
   <footer class="footer">
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a href="index.html" class="header__logo" style="margin-bottom:0.5rem;">
+          <a href="index.html" class="header__logo" style="margin-bottom: 0.5rem;">
             <div class="header__logo-icon">VS</div>
-            <div class="header__logo-text">V SECURE<span>Property Services</span></div>
+            <div class="header__logo-text">
+              V SECURE
+              <span>Property Services</span>
+            </div>
           </a>
-          <p>Professional property monitoring and asset management services. A Division of VTrust Realty Pvt. Ltd.</p>
+          <p>
+            V Secure Property Services is a division of VTrust Realty Pvt. Ltd., created to help property owners professionally monitor and manage their real estate assets.
+          </p>
+          <p style="font-size: 0.85rem; color: var(--clr-primary-light); font-weight: 600; margin-top: 0.5rem;">
+            A Division of VTrust Realty Pvt. Ltd.
+          </p>
           <div class="footer__social">
             <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
           </div>
+          <div style="margin-top: 1rem; font-size: 0.875rem; color: var(--clr-text-muted);">
+            <div><i class="fa-solid fa-location-dot" style="color:var(--clr-primary); margin-right:6px;"></i> Chennai, Tamil Nadu, India</div>
+            <div style="margin-top: 4px;"><i class="fa-solid fa-envelope" style="color:var(--clr-primary); margin-right:6px;"></i> admin@secureplots.com</div>
+          </div>
         </div>
+
         <div class="footer__col">
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="how-it-works.html">How It Works</a></li>
-            <li><a href="plans.html">Pricing Plans</a></li>
+            <li><a href="plans.html">Plans</a></li>
             <li><a href="app.html">Mobile App</a></li>
           </ul>
         </div>
+
         <div class="footer__col">
           <h4>Services</h4>
           <ul>
-            <li><a href="services.html">Property Monitoring</a></li>
-            <li><a href="services.html">Maintenance</a></li>
-            <li><a href="services.html">Valuation</a></li>
-            <li><a href="services.html">Documentation</a></li>
+            <li><a href="services.html#monitoring">Property Monitoring</a></li>
+            <li><a href="services.html#maintenance">Maintenance</a></li>
+            <li><a href="services.html#valuation">Valuation</a></li>
+            <li><a href="services.html#documentation">Documentation</a></li>
           </ul>
         </div>
+
         <div class="footer__col">
           <h4>Support</h4>
           <ul>
             <li><a href="faq.html">FAQs</a></li>
             <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="app.html">Customer Login</a></li>
             <li><a href="contact.html#register">Register Property</a></li>
-            <li><a href="contact.html">Help Desk</a></li>
           </ul>
         </div>
       </div>
+
       <div class="footer__bottom">
         <p>&copy; 2026 V Secure Property Services. A Division of VTrust Realty Pvt. Ltd. All Rights Reserved.</p>
         <div class="footer__policies">

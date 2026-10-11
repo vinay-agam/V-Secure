@@ -1,6 +1,7 @@
 /* ============================================
    V SECURE — Main JavaScript
    Light Theme & Mobile Optimized
+   Sequential Scroll Reveal System
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,7 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 2. Ensure drawer header exists with dedicated close button
+    // 2. Remove redundant second close button from drawer (sole close action is nav-toggle)
+    const duplicateClose = headerNav.querySelectorAll('.nav__drawer-close');
+    duplicateClose.forEach(btn => btn.remove());
+
     let drawerHeader = headerNav.querySelector('.nav__drawer-header');
     if (!drawerHeader) {
       drawerHeader = document.createElement('div');
@@ -49,9 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <span style="font-size:0.65rem;">Property Services</span>
           </div>
         </div>
-        <button class="nav__drawer-close" aria-label="Close navigation">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
       `;
       headerNav.insertBefore(drawerHeader, headerNav.firstChild);
     }
@@ -81,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navToggle.parentNode.insertBefore(mobileCta, navToggle);
     }
 
-    // 5. Drawer Toggle / Close Handlers
+    // 5. Drawer Toggle / Close Handlers (Unified Single Close Action)
     const toggleMenu = () => {
       const isOpen = headerNav.classList.toggle('open');
       navToggle.classList.toggle('active');
@@ -103,14 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleMenu();
     });
 
-    const drawerCloseBtn = headerNav.querySelector('.nav__drawer-close');
-    if (drawerCloseBtn) {
-      drawerCloseBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeMenu();
-      });
-    }
-
     backdrop.addEventListener('click', closeMenu);
 
     // Close when clicking any nav link or CTA
@@ -126,35 +119,177 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Automatically close drawer if window expands beyond 1024px
+    // Automatically close drawer if window expands beyond 1180px
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 1024 && headerNav.classList.contains('open')) {
+      if (window.innerWidth > 1180 && headerNav.classList.contains('open')) {
         closeMenu();
       }
     }, { passive: true });
   }
 
-  // ---------- SCROLL REVEAL OBSERVER ----------
-  const revealElements = document.querySelectorAll('.reveal');
-  if (revealElements.length > 0) {
-    if ('IntersectionObserver' in window) {
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -40px 0px'
+  // ---------- SEQUENTIAL SCROLL REVEAL SYSTEM ----------
+  // This system ensures all elements animate strictly in DOM order (top → bottom).
+  // No element will reveal before all elements above it have been revealed.
+  // FIX: On refresh mid-page, elements already above/within viewport are instantly shown.
+
+  const revealSelectors = [
+    '.reveal',
+    '.benefit-card',
+    '.service-card',
+    '.step',
+    '.plan-card',
+    '.app-feature',
+    '.section-header',
+    '.contact-info-card',
+    '.contact-form',
+    '.about-split__image',
+    '.about-split__content',
+    '.process-flow',
+    '.additional-services__item',
+    '.cta-section .container',
+    '.app-section__image',
+    '.mv-card',
+    '.diff-card',
+    '.serve-card',
+    '.faq-item',
+    '.faq-categories',
+    '.about-cards-grid .benefit-card'
+  ];
+
+  // Collect all revealable elements, already in DOM order
+  const allRevealElements = document.querySelectorAll(revealSelectors.join(', '));
+
+  if (allRevealElements.length > 0) {
+    // Ensure each element has the .reveal class for initial hidden state
+    allRevealElements.forEach((el) => {
+      if (!el.classList.contains('reveal') &&
+          !el.classList.contains('reveal--left') &&
+          !el.classList.contains('reveal--right') &&
+          !el.classList.contains('reveal--zoom')) {
+        el.classList.add('reveal');
+      }
+    });
+
+    // Build an ordered index map: element → its index in DOM order
+    const elementIndex = new Map();
+    allRevealElements.forEach((el, idx) => {
+      elementIndex.set(el, idx);
+    });
+
+    // Track state
+    let highestRevealedIndex = -1;
+    const pendingSet = new Set();
+
+    /**
+     * INSTANT REVEAL on page load:
+     * If the browser restores scroll position (e.g. refresh while at footer),
+     * immediately show all elements that are above or currently within the viewport.
+     * This runs BEFORE the IntersectionObserver so content is never invisible.
+     */
+    const viewportBottom = window.scrollY + window.innerHeight;
+
+    allRevealElements.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      const elTop = rect.top + window.scrollY;
+
+      // Element is above or within the current viewport
+      if (elTop < viewportBottom + 50) {
+        // Instantly reveal — no transition, no delay
+        el.style.transition = 'none';
+        el.style.transitionDelay = '0s';
+        el.classList.add('revealed');
+        const idx = elementIndex.get(el);
+        highestRevealedIndex = Math.max(highestRevealedIndex, idx);
+      }
+    });
+
+    // Force a reflow so the instant reveals paint before we re-enable transitions
+    // eslint-disable-next-line no-unused-expressions
+    document.body.offsetHeight;
+
+    // Re-enable transitions on instantly revealed elements (for any future hover effects etc.)
+    allRevealElements.forEach((el) => {
+      if (el.classList.contains('revealed')) {
+        el.style.transition = '';
+      }
+    });
+
+    /**
+     * Process the queue: reveal elements in strict DOM order.
+     * Only reveals an element if all elements before it have been revealed.
+     */
+    const processQueue = () => {
+      const pendingArray = Array.from(pendingSet).sort((a, b) => {
+        return elementIndex.get(a) - elementIndex.get(b);
       });
 
-      revealElements.forEach(el => revealObserver.observe(el));
+      let revealedInThisPass = 0;
+
+      for (const el of pendingArray) {
+        const idx = elementIndex.get(el);
+
+        if (idx <= highestRevealedIndex + 1) {
+          const staggerDelay = revealedInThisPass * 0.07;
+          el.style.transitionDelay = `${staggerDelay}s`;
+
+          el.classList.add('revealed');
+          pendingSet.delete(el);
+          highestRevealedIndex = Math.max(highestRevealedIndex, idx);
+          revealedInThisPass++;
+        }
+      }
+
+      if (revealedInThisPass > 0 && pendingSet.size > 0) {
+        requestAnimationFrame(processQueue);
+      }
+    };
+
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        let hasNew = false;
+
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            pendingSet.add(entry.target);
+            revealObserver.unobserve(entry.target);
+            hasNew = true;
+          }
+        });
+
+        if (hasNew) {
+          processQueue();
+        }
+      }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -30px 0px'
+      });
+
+      allRevealElements.forEach(el => revealObserver.observe(el));
     } else {
-      revealElements.forEach(el => el.classList.add('revealed'));
+      // Fallback for browsers without IntersectionObserver
+      allRevealElements.forEach(el => el.classList.add('revealed'));
     }
   }
+
+  // ---------- FIX STEPS TIMELINE LINE HEIGHT ----------
+  // Dynamically size the vertical line so it spans exactly from
+  // the center of the first step marker to the center of the last.
+  document.querySelectorAll('.steps').forEach(stepsContainer => {
+    const line = stepsContainer.querySelector('.steps__line');
+    const markers = stepsContainer.querySelectorAll('.step__marker');
+    if (!line || markers.length < 2) return;
+
+    const firstMarker = markers[0];
+    const lastMarker = markers[markers.length - 1];
+
+    const containerRect = stepsContainer.getBoundingClientRect();
+    const firstCenter = firstMarker.getBoundingClientRect().top + (firstMarker.offsetHeight / 2) - containerRect.top;
+    const lastCenter = lastMarker.getBoundingClientRect().top + (lastMarker.offsetHeight / 2) - containerRect.top;
+
+    line.style.top = firstCenter + 'px';
+    line.style.height = (lastCenter - firstCenter) + 'px';
+    line.style.bottom = 'auto';
+  });
 
   // ---------- COUNTER ANIMATION ----------
   const counters = document.querySelectorAll('.counter');
@@ -218,6 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- FAQ CATEGORY FILTER ----------
   const categoryBtns = document.querySelectorAll('.faq-category-btn');
   const faqAllItems = document.querySelectorAll('.faq-item');
+  const faqHeadings = document.querySelectorAll('.faq-section-heading');
   if (categoryBtns.length > 0) {
     categoryBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -230,6 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
             item.style.display = 'block';
           } else {
             item.style.display = 'none';
+          }
+        });
+
+        faqHeadings.forEach(heading => {
+          if (category === 'all' || heading.getAttribute('data-category') === category) {
+            heading.style.display = 'flex';
+          } else {
+            heading.style.display = 'none';
           }
         });
       });
