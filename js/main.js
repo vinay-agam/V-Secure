@@ -46,13 +46,9 @@ document.addEventListener('DOMContentLoaded', () => {
       drawerHeader = document.createElement('div');
       drawerHeader.className = 'nav__drawer-header';
       drawerHeader.innerHTML = `
-        <div class="nav__drawer-brand">
-          <div class="header__logo-icon" style="width:34px;height:34px;font-size:0.95rem;">VS</div>
-          <div class="header__logo-text" style="font-size:1.05rem;">
-            V SECURE
-            <span style="font-size:0.65rem;">Property Services</span>
-          </div>
-        </div>
+        <a href="index.html" class="nav__drawer-brand" aria-label="V Secure Property Services Home">
+          <img src="images/v_secure_logo.png" alt="V Secure Property Services" class="nav__drawer-logo-img">
+        </a>
       `;
       headerNav.insertBefore(drawerHeader, headerNav.firstChild);
     }
